@@ -9,13 +9,12 @@ keywords: Python, 装饰器
 ### 语言特性
 #### 函数参数传递
 当一个引用传递给函数的时候，函数自动复制一份引用，这个函数的引用和外边的引用没有关系。
-```
+```python
 a = 1
 def fun(a):
     a = 2
 fun(a)
 print a  # 1
-
 a = []
 def fun(a):
     a.append(1)
@@ -56,13 +55,13 @@ a=A()
 
 + **实例变量**
 > 实例化后，每个实例单独拥有的变量
-```
+
+```python
 class Test(object):  
     num_of_instance = 0  
     def __init__(self, name):  
         self.name = name  
         Test.num_of_instance += 1  // 也可以通过test1.num_of_instance来修改
-
 if __name__ == '__main__':  
     print Test.num_of_instance   # 0
     t1 = Test('jack')  
@@ -76,15 +75,15 @@ if __name__ == '__main__':
 自省，就是运行时能够获得对象的类型。比如`type()、dir()、hasattr()、isinstance()`
 
 ### 单下划线和双下划线
-`__foo__`：python内部名字的**约定**，用来区别其他用户自定义的命名，以防止冲突。比如`__init__、__del__、__call__`
-`_foo`：指变量私有的**约定**。不能用`from module import *`导入，其他和公有一样访问
-`__foo`：解析器用`_classname__foo`来替代这个名字，无法直接像公有成员一样随便访问，需要通过**对象名._类名__xxx**形式访问
-```
->>> class MyClass():
-...     def __init__(self):
-...             self.__superprivate = "Hello"
-...             self._semiprivate = ", world!"
-...
++ `__foo__`：python内部名字的**约定**，用来区别其他用户自定义的命名，以防止冲突。比如`__init__、__del__、__call__`
++ `_foo`：指变量私有的**约定**。不能用`from module import *`导入，其他和公有一样访问
++ `__foo`：解析器用`_classname__foo`来替代这个名字，无法直接像公有成员一样随便访问，需要通过**对象名.\_类名__xxx** 形式访问
+
+```python
+class MyClass():
+     def __init__(self):
+          self.__superprivate = "Hello"
+          self._semiprivate = ", world!"
 >>> mc = MyClass()
 >>> print mc.__superprivate
 Traceback (most recent call last):
@@ -101,11 +100,11 @@ AttributeError: myClass instance has no attribute '__superprivate'
 + **生成器**：只能迭代使用一次的迭代器。生成器并不会把所有的元素都放进内存。
 + **yeild**：很像`return`，返回的是一个生成器。
 
-### *args 和 **kwargs
+### \*args 和 \*\*kwargs
 `*args`接收参数保存为列表，`**kwargs`接收参数保存为字典
 > `*args` 和`**kwargs`可以同时在函数定义中，但是`**kwargs`必须放在`*args`后面
 
-```
+```python
 >>> def print_three_things(a, b, c):
 ...     print 'a = {0}, b = {1}, c = {2}'.format(a,b,c)
 ...
@@ -120,6 +119,7 @@ a = aardvark, b = baboon, c = cat
 > 装饰器的作用，就是为已经存在的对象添加额外功能
 
 > python提供了一些自带的装饰器，比如`property，staticmethod`
+
 + 详解见：https://stackoverflow.com/questions/739654/how-to-make-a-chain-of-function-decorators
 + 中文版：https://taizilongxu.gitbooks.io/stackoverflow-about-python/content/3/README.html
 
@@ -137,7 +137,7 @@ a = aardvark, b = baboon, c = cat
 
 > 在多重继承方面，这种深度和广度的差别，会带来一些重写被绕过的问题
 
-```
+```python
 class A(): // 旧式类的深度优先例子
     def foo1(self):
         print "A"
@@ -152,12 +152,11 @@ class D(B, C):
 
 d = D()
 d.foo1()
-
 // A
 ```
 详情参考：http://www.cnblogs.com/btchenguang/archive/2012/09/17/2689146.html
 
-### __new__和__init__的区别
+### \__new\__和\__init\__的区别
 + `__new__`是一个静态方法，`__init__`是一个实例方法
 + `__new__`方法返回一个创建的实例，而`__init__`什么都不返回
 + 只有在`__new__`返回一个cls的实例后面的`__init__`才会被调用
