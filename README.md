@@ -18,7 +18,7 @@
 
 **[在线预览 &rarr;](http://www.coconlp.top)**
 
-![screenshot home](http://mazhuang.org/assets/images/screenshots/home.png)
+![screenshot home](https://killersdeath.github.io/assets/images/screenshots/homepage.png)
 
 ## Fork 指南
 
