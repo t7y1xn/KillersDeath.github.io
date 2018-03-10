@@ -7,7 +7,7 @@ keywords: ML, LDA, pLSA
 ---
 
 ### 请大致对比一下pLSA和LDA的区别？
-> **PLSA中P(z|d)和P(w|z)是确定的值**
+> **PLSA中 P(z\|d) 和 P(w\|z) 是确定的值**
 >
 > **LDA是pLSA的贝叶斯版本。文档d产生主题z（其实是Dirichlet先验为文档d生成主题分布θ，然后根据主题θ参数主题z）**
 
