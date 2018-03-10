@@ -37,10 +37,10 @@ keywords: ML, Decison Tree, 决策树
 
 ### 9. Adaboost的集成效果为什么会比单个学习器效果好？怎么最大化其优势？
 **Ans**：①首先介绍一下boost的理论依据。假设单个学习器的错误率为：
-<img src="/images/machine learning/005-DT-01.png" width="40%" height="40" alt="gecko embed program run error 2" />
+<img src="/images/machine learning/005-DT-01.png" width="60%" height="60" alt="gecko embed program run error 2" />
 
 假设**错误率相互独立**，由Hoeffding不等式可以得到整体学习器的错误率：
-<img src="/images/machine learning/005-DT-02.png" width="40%" height="40" alt="gecko embed program run error 2" />m
+<img src="/images/machine learning/005-DT-02.png" width="60%" height="60" alt="gecko embed program run error 2" />m
 
 由不等式右边可知：如果学习器的数目T逐渐增大，那么整个学习器的错误率将**指数级下降，甚至最终趋向于0**
 ②**最大化优势的核心在于**：如何生成准确性又不是很差，并能保证多样性的个体学习器？(保证错误率假设成立)。两种方式：**Boosting**——个体学习器间存在强依赖关系，必须串行生成；**Bagging**——个体之间不存在强依赖关系，并行生成(如 随机森林)
