@@ -1,2 +1,2 @@
-source 'https://killersdeath.github.io/'
+source 'https://rubygems.org'
 gem 'github-pages', group: :jekyll_plugins
