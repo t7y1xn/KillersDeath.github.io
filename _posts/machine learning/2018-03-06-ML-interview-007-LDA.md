@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 机器学习面试005——主题模型
+title: 机器学习面试007——主题模型
 categories: [机器学习, 面试]
 description: 面试总结
 keywords: ML, LDA, pLSA
