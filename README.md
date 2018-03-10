@@ -18,7 +18,7 @@
 
 **[在线预览 &rarr;](http://www.coconlp.top)**
 
-![screenshot home](https://killersdeath.github.io/assets/images/screenshots/homepage.png)
+![screenshot home](https://github.com/KillersDeath/KillersDeath.github.io/blob/master/assets/images/screenshots/homepage.png)
 
 ## Fork 指南
 
