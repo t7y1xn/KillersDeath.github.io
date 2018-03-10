@@ -8,7 +8,7 @@ keywords: Flask, RESTful
 
 ### **Flask简介**
 - flask框架是基于python语言的轻量级web服务器框架，搭建简单，部署轻便，而且能够满足大部分的业务场景，诸多优点使得flask web框架受到许多开发者的青睐。笔者初识flask时，就被flask的"微"(micro)给惊艳到了。在flask官网中，如此介绍道："微框架的'微'意味着保持核心简单而易于扩展"，默认情况下，Flask不包含数据库抽象层，表单验证(此功能可以借助其他三方python的web库进行友好衔接、实现)。
-同时，官方中文文档中有很好的入门例子[传送门]<http://docs.jinkan.org/docs/flask/foreword.html#id2> 如下，是一个简单的Flask服务器样例
+- 同时，官方中文文档中有很好的入门例子[传送门]<http://docs.jinkan.org/docs/flask/foreword.html#id2> 如下，是一个简单的Flask服务器样例
 
 ```python
 form flask import Flask
