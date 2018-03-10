@@ -9,10 +9,10 @@ keywords: ML, LDA, pLSA
 ### 请大致对比一下pLSA和LDA的区别？
 > **PLSA中 P(z\|d) 和 P(w\|z) 是确定的值**
 
-<img src="/images/machine learning/005-LDA-01.png" width="80%" alt="gecko embed program run error 2" />
+<img src="/images/machine learning/007-LDA-01.png" width="80%" alt="gecko embed program run error 2" />
 > **LDA是pLSA的贝叶斯版本。文档d产生主题z（其实是Dirichlet先验为文档d生成主题分布θ，然后根据主题θ参数主题z）**
 
-<img src="/images/machine learning/005-LDA-02.png" width="80%" alt="gecko embed program run error 2" />
+<img src="/images/machine learning/007-LDA-02.png" width="80%" alt="gecko embed program run error 2" />
 
 -------
 
