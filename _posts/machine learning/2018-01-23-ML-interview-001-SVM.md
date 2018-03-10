@@ -27,4 +27,5 @@ keywords: ML, SVM, 支持向量机
 
 ### 5. 在目标函数中，拉格朗日的参数α的取值有什么特点？
 <img src="/images/machine learning/001-SVM-03.png" width="80%" alt="gecko embed program run error 2" />
+
 **Ans**：对于远离平面的点为0；在边缘线的值在 [0, 1/N]之间；对于outlier数据的值为1/N
