@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 操作系统基础
-categories: [unix]
+categories: Unix
 description: 操作系统基础知识
 keywords: unix, 操作系统, 锁, 进程
 ---

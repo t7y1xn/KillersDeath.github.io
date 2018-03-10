@@ -1,14 +1,9 @@
 ---
 layout: post
 title: GNU的make命令、makefile编写
-date: 2016-07-06T00:00:00.000Z
-desc: GNU的make命令、makefile编写
-keywords: 'GNU, linux, make'
-categories:
-  - Linux
-tags:
-  - terminal
-icon: icon-html
+categories: Unix
+description: GNU的make命令、makefile编写
+keywords: GNU, linux, make
 ---
 
 ## **makefile简介**
