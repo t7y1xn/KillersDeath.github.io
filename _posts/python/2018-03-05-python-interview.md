@@ -183,6 +183,7 @@ d.foo1()
 
 #### 使用`__new__`方法
 > 不考虑多线程问题（当多个线程同时初始化对象时，就可能同时判断_instance is None）
+
 ```
 class Singleton(object):
 	def __new__(cls, *args, *kwargs):
