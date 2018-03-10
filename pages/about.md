@@ -1,14 +1,14 @@
 ---
 layout: page
 title: About
-description: 打码改变世界
-keywords: Zhuang Ma, 马壮
+description: 不愿意抄作业
+keywords: KillersDeath, Kevin
 comments: true
 menu: 关于
 permalink: /about/
 ---
 
-我是马壮，码而生，码而立。
+我是Kevin，业余物理（本科），术业自然语言（硕士）。
 
 仰慕「优雅编码的艺术」。
 
