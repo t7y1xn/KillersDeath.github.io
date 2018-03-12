@@ -19,6 +19,8 @@ keywords: 强化学习，DQN
 #### 输入
 网络输入是84×84×4的经过预处理后的图像
 #### 卷积层和全连接层
+<img src="/images/paper/DQN-01.png" width="80%" alt="gecko embed program run error 2" />
+
 + 第一层卷积—— 32 filters of 8×8， 步长4，Relu 激活
 + 第二层卷积——64 filters of 4×4，步长2，Relu 激活
 + 第三层卷积——64 filters of 3×3，步长1，Relu 激活
@@ -41,18 +43,24 @@ keywords: 强化学习，DQN
 <a href="https://www.codecogs.com/eqnedit.php?latex=Q^{\*}(s,a)=E_{s^{'}}[r&plus;\gamma&space;max_{a^{'}}Q^{\*}(s^{'},a^{'})|s,a]" target="\_blank"><img src="https://latex.codecogs.com/gif.latex?Q^{\*}(s,a)=E_{s^{'}}[r&plus;\gamma&space;max_{a^{'}}Q^{\*}(s^{'},a^{'})|s,a]" title="Q^{\*}(s,a)=E_{s^{'}}[r+\gamma max_{a^{'}}Q^{\*}(s^{'},a^{'})|s,a]" /></a>
 
 因此借助贝尔曼进行Q的迭代更新：
+
 <a href="https://www.codecogs.com/eqnedit.php?latex=Q_{i&plus;1}(s,a)=E_{s^{'}}[r&plus;\gamma&space;max_{a^{'}}Q_{i}(s^{'},a^{'})|s,a]" target="\_blank"><img src="https://latex.codecogs.com/gif.latex?Q_{i&plus;1}(s,a)=E_{s^{'}}[r&plus;\gamma&space;max_{a^{'}}Q_{i}(s^{'},a^{'})|s,a]" title="Q_{i+1}(s,a)=E_{s^{'}}[r+\gamma max_{a^{'}}Q_{i}(s^{'},a^{'})|s,a]" /></a>
 
 但实际上，这种方式并不可行。因为动作-值函数是对每个序列进行独立评估的，并未涉及任何生成过程。因此，更常用函数逼近方法来估计动作-值函数，比如线性函数逼近，或者借助神经网络进行非线性函数逼近。
+
 <a href="https://www.codecogs.com/eqnedit.php?latex=Q(s,a;&space;\Theta&space;)\approx&space;Q^{\*}(s,&space;a)" target="\_blank"><img src="https://latex.codecogs.com/gif.latex?Q(s,a;&space;\Theta&space;)\approx&space;Q^{\*}(s,&space;a)" title="Q(s,a; \Theta )\approx Q^{\*}(s, a)" /></a>
 
 在迭代过程中计算均方差：
+
 <a href="https://www.codecogs.com/eqnedit.php?latex=L_{i}(\Theta&space;_{i})=E_{s,a,r}[(E_{s^{'}}[y|s,a]-Q(s,a;\Theta&space;_{i}))^{2}]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?L_{i}(\Theta&space;_{i})=E_{s,a,r}[(E_{s^{'}}[y|s,a]-Q(s,a;\Theta&space;_{i}))^{2}]" title="L_{i}(\Theta _{i})=E_{s,a,r}[(E_{s^{'}}[y|s,a]-Q(s,a;\Theta _{i}))^{2}]" /></a>
 
 进一步约化为：
+
 <a href="https://www.codecogs.com/eqnedit.php?latex=L_{i}(\Theta&space;_{i})=E_{s,a,r}[(y-Q(s,a;\Theta&space;_{i})^{2}]&plus;E_{s,a,r}[V_{s^{'}}[y]]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?L_{i}(\Theta&space;_{i})=E_{s,a,r}[(y-Q(s,a;\Theta&space;_{i})^{2}]&plus;E_{s,a,r}[V_{s^{'}}[y]]" title="L_{i}(\Theta _{i})=E_{s,a,r}[(y-Q(s,a;\Theta _{i})^{2}]+E_{s,a,r}[V_{s^{'}}[y]]" /></a>
+
 在监督学习中，目标值在训练过程中是确定的。但是在这里，目标值依赖于网络权重，在每一步的梯度优化中，我们固定先前迭代的参数`θi-`，去优化Loss函数。上式中的最后一项，是目标值方差，一般常忽略不作处理（不依赖与θi）。
 对loss函数求导：
+
 <a href="https://www.codecogs.com/eqnedit.php?latex=\bigtriangledown&space;_{\Theta&space;_{i}}L(\Theta&space;_{i})=E_{s,a,r,s_{'}}[(r&plus;\gamma&space;max_{a_{'}}Q(s_{'},a_{'};\Theta&space;_{i}^{-}))\bigtriangledown&space;_{\Theta&space;_{i}}Q(s,a;\Theta&space;_{i})]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\bigtriangledown&space;_{\Theta&space;_{i}}L(\Theta&space;_{i})=E_{s,a,r,s_{'}}[(r&plus;\gamma&space;max_{a_{'}}Q(s_{'},a_{'};\Theta&space;_{i}^{-}))\bigtriangledown&space;_{\Theta&space;_{i}}Q(s,a;\Theta&space;_{i})]" title="\bigtriangledown _{\Theta _{i}}L(\Theta _{i})=E_{s,a,r,s_{'}}[(r+\gamma max_{a_{'}}Q(s_{'},a_{'};\Theta _{i}^{-}))\bigtriangledown _{\Theta _{i}}Q(s,a;\Theta _{i})]" /></a>
 
 ### 训练过程
