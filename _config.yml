@@ -2,7 +2,7 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: https://killersdeath.github.io/
+url: https://t7y1xn.github.io
 date_format: "ordinal"
 title: CocoNLP
 subtitle: "To Be Myself."
@@ -77,7 +77,7 @@ collections:
         output: true
         permalink: /wiki/:path/
 
-repository: KillersDeath/KillersDeath.github.io
+repository: t7y1xn/t7y1xn.github.io
 
 # ---------------- #
 #      Comments    #
