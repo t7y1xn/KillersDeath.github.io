@@ -66,4 +66,4 @@ DQN中，借助了深度神经网络来拟合**动作-值函数**，即折扣累
 + 独立的target value网络（其实就是复制了一下Q-network参数，延迟C step 进行更新）
 
 ### 算法细节
-关于DQN详细的算法实现过程，请参考另一篇博客[《强化学习论文——简述DQN论文算法细节》]()
+关于DQN详细的算法实现过程，请参考另一篇博客[《强化学习论文——简述DQN论文算法细节》](/_post/paper/2018-03-12-reinforcement-learning-paper-DQN-algorithm.md)

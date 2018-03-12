@@ -7,7 +7,7 @@ keywords: 强化学习，DQN
 ---
 
 ### DQN算法
-有关DQN的经典论文解读，请移步[《强化学习论文——DQN》]()。
+有关DQN的经典论文解读，请移步[《强化学习论文——DQN》](/2018-03-12-reinforcement-learning-paper-DQN.md)。
 本文主要记录一下《Human-level control through deep reinforcement learning》论文中，算法实现的细节，供小伙伴们交流。论文提供的代码是用`lua`写的，[代码传送门](https://sites.google.com/a/deepmind.com/dqn/)
 
 ### 预处理
