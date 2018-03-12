@@ -54,10 +54,10 @@ DQN中，借助了深度神经网络来拟合**动作-值函数**，即折扣累
 
 #### step4. 网络训练
 如下图，输入是游戏的视频帧，通过3层卷积层，后接2层全连接层，最后输出当前状态（视频帧）在采取的所有动作的Q值函数。作者在论文中提到，此模型尽可能的少的进行先验假设。
-<img src="/images/paper/DQN-001.png" width="80%" alt="gecko embed program run error 2" />
+<img src="/images/paper/DQN-01.png" width="80%" alt="gecko embed program run error 2" />
 
 在训练过程中，采用贪心策略，即在网络输出得到的所有动作值函数Q时，并非以直接选取最大值对应的动作，而是采取`ξ-greedy policy`，即可能以很小的概率选取其他动作，以保证探索空间的多样性。在追踪平均每个episode的得分情况，可以看出Q函数能够稳定的收敛到一定值。
-<img src="/images/paper/DQN-002.png" width="80%" alt="gecko embed program run error 2" />
+<img src="/images/paper/DQN-02.png" width="80%" alt="gecko embed program run error 2" />
 
 ### 小结
 + 在论文中，作者还提到DQN能够学习到相对长期的策略（提到在小霸王里消砖的那款游戏：agent可以通过强化学习学到，优先把一个角打通，然后就会在天花板里来回谈，以获得很高的回报）
