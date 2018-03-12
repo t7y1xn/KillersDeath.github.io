@@ -68,5 +68,5 @@ keywords: 强化学习，DQN
 <img src="/images/paper/DQN-03.png" width="80%" alt="gecko embed program run error 2" />
 
 ### 总结
-+ **model-free**——算法直接使用模拟器的样本解决强化学习任务，并没有显式的估计回报和transition dynamics P(r, s’|s, a)
++ **model-free**——算法直接使用模拟器的样本解决强化学习任务，并没有显式的估计回报和transition dynamics P(r, s’\|s, a)
 + **off-policy**——算法学习的是贪心策略 a=argmaxQ(s,a’;θ)，按照行为分布来确保状态空间的足够性探索
